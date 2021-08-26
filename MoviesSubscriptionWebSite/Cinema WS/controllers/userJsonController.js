@@ -5,32 +5,32 @@ const userBL = require('../models/userJsonBL')
 
 
 Router.route('/').get(async (req,resp) =>{
-    let users = await userBL.getAllUsers() ;
+    const users = await userBL.getAllUsers() ;
     return resp.json(users)
 }) 
 
 Router.route('/:id').get(async(req,resp) =>{
-    let id = req.params.id
-    let user = await userBL.getUserById(id)
+    const id = req.params.id
+    const user = await userBL.getUserById(id)
     return resp.json(user)
 })
 
 Router.route('/').post(async (req,resp) =>{
-    let obj = req.body
-    let response = await userBL.createUser(obj) ;
+    const obj = req.body
+    const response = await userBL.createUser(obj) ;
     return resp.json(response)
 })
 
 Router.route('/:id').put(async(req,resp) =>{
-    let id = req.params.id
-    let obj = req.body
-    let response = await userBL.updateUser(id,obj)
+    const id = req.params.id
+    const obj = req.body
+    const response = await userBL.updateUser(id,obj)
     return resp.json(response)
 })
 
 Router.route('/:id').delete(async (req,resp) =>{
-    let id = req.params.id 
-    let response = await userBL.deleteUser(id) 
+    const id = req.params.id 
+    const response = await userBL.deleteUser(id) 
     return resp.json(response)
 })
 

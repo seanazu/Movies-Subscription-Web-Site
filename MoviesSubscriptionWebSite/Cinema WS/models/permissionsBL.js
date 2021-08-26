@@ -32,10 +32,10 @@ const getPermissionsById = (id) => {
 }
 
 const createPermission = (obj) => {
-    let jsonFile = json
-    let permissions = jsonFile.permissions
-    let response = "Permission Already In The System"
-    let newPermissions = permissions.filter(item=>item.id == obj.id)
+    const jsonFile = json
+    const permissions = jsonFile.permissions
+    const response = "Permission Already In The System"
+    const newPermissions = permissions.filter(item=>item.id == obj.id)
     if(newPermissions == true){
         console.log(response)
     }else if (newPermissions == false){
@@ -58,8 +58,8 @@ const createPermission = (obj) => {
 }
 
 const updatePermission = (id,obj) =>{
-    let newPermissionArray = []
-    let jsonFile = json
+    const newPermissionArray = []
+    const jsonFile = json
     json.permissions.map(item =>{ 
         if(item.id == id){
             item = obj
@@ -81,9 +81,9 @@ const updatePermission = (id,obj) =>{
 } 
 
 const deletePermission = (id) =>{
-    let jsonFile = json
-    let permissions = jsonFile.permissions
-    let newPermissions = permissions.filter(item=>item.id != id)
+    const jsonFile = json
+    const permissions = jsonFile.permissions
+    const newPermissions = permissions.filter(item=>item.id != id)
     jsonFile.permissions = newPermissions
     return new Promise((resolve, reject)=>{
         fs.writeFile('./Permissions.json',JSON.stringify(jsonFile),(err)=>{

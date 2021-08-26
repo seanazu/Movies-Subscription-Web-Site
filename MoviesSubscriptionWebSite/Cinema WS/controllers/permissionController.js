@@ -5,32 +5,32 @@ const permissionsBL = require('../models/permissionsBL')
 
 
 Router.route('/').get(async (req,resp) =>{
-    let permissions = await permissionsBL.getAllPermissions() ;
+    const permissions = await permissionsBL.getAllPermissions() ;
     return resp.json(permissions)
 }) 
 
 Router.route('/:id').get(async(req,resp) =>{
-    let id = req.params.id
-    let permission = await permissionsBL.getPermissionsById(id)
+    const id = req.params.id
+    const permission = await permissionsBL.getPermissionsById(id)
     return resp.json(permission)
 })
 
 Router.route('/').post(async (req,resp) =>{
-    let obj = req.body
-    let response = await permissionsBL.createPermission(obj) ;
+    const obj = req.body
+    const response = await permissionsBL.createPermission(obj) ;
     return resp.json(response)
 })
 
 Router.route('/:id').put(async(req,resp) =>{
-    let id = req.params.id
-    let obj = req.body
-    let response = await permissionsBL.updatePermission(id,obj)
+    const id = req.params.id
+    const obj = req.body
+    const response = await permissionsBL.updatePermission(id,obj)
     return resp.json(response)
 })
 
 Router.route('/:id').delete(async (req,resp) =>{
-    let id = req.params.id 
-    let response = await permissionsBL.deletePermission(id) 
+    const id = req.params.id 
+    const response = await permissionsBL.deletePermission(id) 
     return resp.json(response)
 })
 

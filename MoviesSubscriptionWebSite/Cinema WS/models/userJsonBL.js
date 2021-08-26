@@ -32,10 +32,10 @@ const getUserById = (id) => {
 }
 
 const createUser = (obj) => {
-    let jsonFile = json
-    let users = jsonFile.users
-    let response = "User Already In The System"
-    let user = users.filter(item=>item.id == obj.id)
+    const jsonFile = json
+    const users = jsonFile.users
+    const response = "User Already In The System"
+    const user = users.filter(item=>item.id == obj.id)
     if(user == true){
         console.log(response)
     }else if (user == false){
@@ -58,8 +58,8 @@ const createUser = (obj) => {
 }
 
 const updateUser = (id,obj) =>{
-    let newUsersArray = []
-    let jsonFile = json
+    const newUsersArray = []
+    const jsonFile = json
     json.users.map(item =>{ 
         if(item.id == id){
             item = obj
@@ -81,9 +81,9 @@ const updateUser = (id,obj) =>{
 } 
 
 const deleteUser = (id) =>{
-    let jsonFile = json
-    let users = jsonFile.users
-    let newUsers = users.filter(item=>item.id != id)
+    const jsonFile = json
+    const users = jsonFile.users
+    const newUsers = users.filter(item=>item.id != id)
     jsonFile.users = newUsers
     return new Promise((resolve, reject)=>{
         fs.writeFile('./Users.json',JSON.stringify(jsonFile),(err)=>{

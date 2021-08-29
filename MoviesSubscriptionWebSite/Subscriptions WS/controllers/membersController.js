@@ -4,31 +4,31 @@ const Router = express.Router() ;
 const membersBL = require('../models/membersBL') ;
 
 Router.route('/').get(async (req,resp) =>{
-    let members = await membersBL.getAllMembers() 
+    const members = await membersBL.getAllMembers() 
     return resp.json(members)
 })
 Router.route('/:id').get(async (req,resp) =>{
-    let id = req.params.id 
-    let member = await membersBL.getMemberById(id) ;
+    const id = req.params.id 
+    const member = await membersBL.getMemberById(id) ;
     return resp.json(member)
 })
 
 Router.route('/').post(async (req,resp) =>{
-    let obj = req.body 
-    let newMember = await membersBL.createNewMember(obj);
+    const obj = req.body 
+    const newMember = await membersBL.createNewMember(obj);
     return resp.json(newMember) 
 })
 
 Router.route('/:id').put(async (req,resp) =>{
-    let id = req.params.id 
-    let newData = req.body 
-    let response = await membersBL.updateMember(id,newData) 
+    const id = req.params.id 
+    const newData = req.body 
+    const response = await membersBL.updateMember(id,newData) 
     return resp.json(response) 
 })
 
 Router.route('/:id').delete(async (req,resp) =>{
-    let id = req.params.id 
-    let response = await membersBL.deleteMember(id) 
+    const id = req.params.id 
+    const response = await membersBL.deleteMember(id) 
     return resp.json(response)
 
 })

@@ -76,10 +76,7 @@ const AddMovieComp = () => {
                       variant="outlined"
                       required
                       fullWidth
-                      id="Name"
                       label="Name"
-                      name="Name"
-                      autoComplete="Name"
                       onChange={(e)=>setMovie({...movie, name:e.target.value})} 
                       
                      
@@ -90,10 +87,7 @@ const AddMovieComp = () => {
                       variant="outlined"
                       required
                       fullWidth
-                      id="Genres"
                       label="Genres" 
-                      name="Genres"
-                      autoComplete="Genres"
                       onChange={(e)=>setMovie({...movie, genre:e.target.value})}
                     
                     />
@@ -103,10 +97,8 @@ const AddMovieComp = () => {
                       variant="outlined"
                       required
                       fullWidth
-                      name="Image URL"
                       label="Image URL"
                       type="Image URL"
-                      id="Image URL"
                       onChange={(e)=>setMovie({...movie, image:e.target.value})}
                      
                     />
@@ -116,10 +108,7 @@ const AddMovieComp = () => {
                       variant="outlined"
                       required
                       fullWidth
-                      name="Premiered"
                       label="Premiered"
-                      type="Premiered"
-                      id="Premiered"
                       onChange={(e)=>setMovie({...movie, premiered:e.target.value})}
                      
                     />

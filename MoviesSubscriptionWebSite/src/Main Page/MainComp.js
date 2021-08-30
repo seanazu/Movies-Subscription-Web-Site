@@ -67,7 +67,7 @@ const MainComp = (props) => {
             firstname: "Admin",
             lastname: "Admin",
             createdDate: "15-06-2021",
-            sessionTimeOut: 120 
+            sessionTimeOut: 150
         }
         await Utils.postUserJson(userJsonObj)
 

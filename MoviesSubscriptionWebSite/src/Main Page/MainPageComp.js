@@ -44,7 +44,6 @@ const MainPageComp = () => {
             <br/>
             <br/>
             <br/>
-            <br/>
           
             
             <Link to="/mainpage/movies" style={{display:displayMovies}} ><Button variant="contained" color="secondary">Movies</Button></Link>{' '}

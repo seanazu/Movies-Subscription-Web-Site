@@ -33,7 +33,6 @@ const MainPageComp = () => {
     console.log("Hello");
 
     },[])
-    debugger;
 
 
     return (

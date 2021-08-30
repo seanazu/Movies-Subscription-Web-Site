@@ -107,10 +107,7 @@ import Container from '@material-ui/core/Container';
                margin="normal"
                required
                fullWidth
-               id="username"
                label="username"
-               name="username"
-               autoComplete="username"
                onChange={(e)=>setUser(e.target.value)}
                autoFocus
              />
@@ -119,10 +116,8 @@ import Container from '@material-ui/core/Container';
                margin="normal"
                required
                fullWidth
-               name="password"
                label="Password"
                type="password"
-               id="password"
                onChange={(e)=>setPassword(e.target.value)}
                autoComplete="current-password"
              />

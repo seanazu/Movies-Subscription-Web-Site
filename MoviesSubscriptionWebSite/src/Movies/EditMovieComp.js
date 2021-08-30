@@ -85,10 +85,7 @@ const EditMovieComp = (props) => {
                           variant="outlined"
                           required
                           fullWidth
-                          id="Name"
                           label="Name"
-                          name="Name"
-                          autoComplete="Name"
                           defaultValue={movie.name}
                           onChange={(e)=>setMovie({...movie, name:e.target.value})}
                           
@@ -100,10 +97,7 @@ const EditMovieComp = (props) => {
                           variant="outlined"
                           required
                           fullWidth
-                          id="Genres"
                           label="Genres" 
-                          name="Genres"
-                          autoComplete="Genres"
                           defaultValue={movie.genre}
                           onChange={(e)=>setMovie({...movie, genre:e.target.value})}
                         
@@ -114,10 +108,8 @@ const EditMovieComp = (props) => {
                           variant="outlined"
                           required
                           fullWidth
-                          name="Image URL"
                           label="Image URL"
                           type="Image URL"
-                          id="Image URL"
                           defaultValue={movie.image}
                           onChange={(e)=>setMovie({...movie, image:e.target.value})}
                          
@@ -128,10 +120,7 @@ const EditMovieComp = (props) => {
                           variant="outlined"
                           required
                           fullWidth
-                          name="Premiered"
                           label="Premiered"
-                          type="Premiered"
-                          id="Premiered"
                           defaultValue={movie.premiered}
                           onChange={(e)=>setMovie({...movie, premiered:e.target.value})}
                          

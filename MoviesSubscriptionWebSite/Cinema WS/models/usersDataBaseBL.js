@@ -29,12 +29,8 @@ const getUserById = (id) =>{
 
 const createNewUser = (newUser) =>{
     return new Promise((resolve,reject) =>{
-        let user = new Users ({
-            username : newUser.username ,
-            password: newUser.password
-        })
-
-        user.save((err)=>{
+        let user = new Users (newUser) 
+            user.save((err)=>{
             if(err){
                 reject(err)
             }else{
@@ -47,10 +43,7 @@ const createNewUser = (newUser) =>{
 
 const updateUser = (id,updatedData) =>{
     return new Promise ((resolve,reject) =>{
-        Users.findByIdAndUpdate(id,{
-            username : updatedData.username ,
-            password: updatedData.password
-        },(err) =>{
+        Users.findByIdAndUpdate(id,updatedData,(err) =>{
             if(err){
                 reject(err)
             }else{

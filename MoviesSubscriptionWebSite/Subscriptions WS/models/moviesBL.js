@@ -72,14 +72,7 @@ const getMovieById = (id) =>{
 
 const createNewMovie = (newMovie) =>{
     return new Promise((resolve,reject) =>{
-        let movie = new Movie ({
-            name: newMovie.name ,
-            genre : newMovie.genre ,
-            image : newMovie.image,
-            premiered: newMovie.premiered
-
-        })
-
+        let movie = new Movie (newMovie)
         movie.save((err)=>{
             if(err){
                 reject(err)
@@ -92,12 +85,7 @@ const createNewMovie = (newMovie) =>{
 
 const updateMovie = (id,updatedData) =>{
     return new Promise ((resolve,reject) =>{
-        Movie.findByIdAndUpdate(id,{
-            name: updatedData.name ,
-            genre : updatedData.genre ,
-            image : updatedData.image,
-            premiered: updatedData.premiered
-        },(err) =>{
+        Movie.findByIdAndUpdate(id,updatedData,(err) =>{
             if(err){
                 reject(err)
             }else{

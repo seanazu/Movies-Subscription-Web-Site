@@ -72,13 +72,7 @@ const getMemberById = (id) =>{
 
 const createNewMember = (newMember) =>{
     return new Promise((resolve,reject) =>{
-        let member = new Member ({
-            fullname:newMember.fullname,
-            email:newMember.email ,
-            city : newMember.city 
-
-        })
-
+        let member = new Member (newMember)
         member.save((err)=>{
             if(err){
                 reject(err)
@@ -91,11 +85,7 @@ const createNewMember = (newMember) =>{
 
 const updateMember = (id,updatedData) =>{
     return new Promise ((resolve,reject) =>{
-        Member.findByIdAndUpdate(id,{
-           fullname:updatedData.fullname,
-           email: updatedData.email ,
-           city : updatedData.city
-        },(err) =>{
+        Member.findByIdAndUpdate(id,updatedData,(err) =>{
             if(err){
                 reject(err)
             }else{

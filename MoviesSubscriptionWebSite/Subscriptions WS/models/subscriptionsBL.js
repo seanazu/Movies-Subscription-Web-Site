@@ -29,11 +29,7 @@ const getSubscriberById = (id) =>{
 
 const createNewSubscriber = (newSubscription) =>{
     return new Promise((resolve,reject) =>{
-        let subscriber = new Subscription ({
-            _id: newSubscription._id ,
-            movies :newSubscription.movies
-        })
-
+        let subscriber = new Subscription (newSubscription)
         subscriber.save((err)=>{
             if(err){
                 reject(err)
@@ -47,10 +43,7 @@ const createNewSubscriber = (newSubscription) =>{
 
 const updateSubscriber= (id,updatedData) =>{
     return new Promise ((resolve,reject) =>{
-        Subscription.findByIdAndUpdate(id,{
-            _id: updatedData._id ,
-            movies :updatedData.movies
-        },(err) =>{
+        Subscription.findByIdAndUpdate(id,updatedData,(err) =>{
             if(err){
                 reject(err)
             }else{

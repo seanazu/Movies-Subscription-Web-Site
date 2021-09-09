@@ -31,6 +31,13 @@ function HideOnScroll(props) {
     window: PropTypes.func,
   };
 
+const useStyles = makeStyles((theme) => ({
+    appBar:{
+    backgroundColor:'black', 
+    height:'130px',
+    backgroundColor:'whitesmoke'
+    }
+  }));
 
 
 const MainComp = (props) => {

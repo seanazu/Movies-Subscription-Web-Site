@@ -18,6 +18,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      fontSize:'xx-large'
     },
     avatar: {
       margin: theme.spacing(1),
@@ -71,7 +72,7 @@ const EditSubscriptionComp = (props) => {
             <Container component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>
-              <AccountCircleIcon color='secondary' style={{fontSize:'xx-large'}}/>
+              <AccountCircleIcon color='secondary' />
               <Typography component="h1" variant="h5">
               Edit Member
               </Typography>

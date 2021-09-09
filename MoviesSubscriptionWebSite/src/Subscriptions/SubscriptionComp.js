@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   root: {
     maxWidth: 450,
+    width:'450px', 
+    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
   },
   media: {
     height: 140,
@@ -47,7 +49,7 @@ const SubscriptionComp = (props) => {
                 <tbody>
                     <tr>
                         <td>
-                            <Card className={classes.root} style={{width:'450px', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
+                            <Card className={classes.root} >
                                <CardContent>
                                  <Typography gutterBottom variant="h5" component="h2">
                                    {member.fullname}

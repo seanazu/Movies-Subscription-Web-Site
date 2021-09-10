@@ -13,7 +13,8 @@ const useStyles = makeStyles({
       minWidth: 275,
       marginRight:'-40%',
       marginTop:'-20%' ,
-      border:'1px solid #eee'
+      border:'1px solid #eee',
+      fontSize:'x-large'
     },
     bullet: {
       display: 'inline-block',
@@ -89,7 +90,7 @@ const SubscriptionsWatched = (props) => {
         <div>
             
           <Card className={classes.root} >
-           <span style={{fontSize:'x-large'}}>Subscribers :</span><CardContent>
+           <span >Subscribers :</span><CardContent>
               <Typography className={classes.title} color="textSecondary" >
               {names}
               </Typography>

@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    fontSize:'xx-large'
   },
   avatar: {
     margin: theme.spacing(1),
@@ -115,7 +116,7 @@ const EditUser = (props) => {
           <Container component="main" maxWidth="xs">
           <CssBaseline />
           <div className={classes.paper}>
-          <AccountCircleIcon color='secondary' style={{fontSize:'xx-large'}}/>
+          <AccountCircleIcon color='secondary' />
             <Typography component="h1" variant="h5">
             Edit User
             </Typography>

@@ -91,7 +91,7 @@ const MoviesComp = () => {
     
         return (
             <div >
-           <div className="App" style={{display:moviesDisplay, margin:'auto'}}>
+           <div className="App" >
            {displayMovies}  
            <ReactPaginate
              previousLabel={"Previous"}

@@ -20,6 +20,7 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      fontSize:'xx-large'
     },
     avatar: {
       margin: theme.spacing(1),
@@ -61,7 +62,7 @@ const AddSubscriptionComp = () => {
            <Container component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>
-              <AddCircleOutlineIcon color='secondary' style={{fontSize:'xx-large'}}/>
+              <AddCircleOutlineIcon color='secondary' />
               <Typography component="h1" variant="h5">
               Add New Member
               </Typography>

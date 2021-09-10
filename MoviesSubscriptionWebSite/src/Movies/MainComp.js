@@ -45,7 +45,7 @@ const MainComp = () => {
           padding: '0 30px',
           margin: 8,
         }, 
-        buttons : {
+        pageButton : {
         fontFamily:'Trebuchet MS,sans-serif'
         }
       });
@@ -61,7 +61,7 @@ const MainComp = () => {
       };
 
     return (
-        <div className={classes.buttons}>
+        <div className={classes.pageButton}>
             <br/><br/>
             <Link to='/mainpage/movies/allMovies' onClick={()=> sessionStorage.setItem('movie','')}>
             <React.Fragment>

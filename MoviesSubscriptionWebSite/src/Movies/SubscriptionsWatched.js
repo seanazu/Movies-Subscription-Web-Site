@@ -11,6 +11,9 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
     root: {
       minWidth: 275,
+      marginRight:'-40%',
+      marginTop:'-20%' ,
+      border:'1px solid #eee'
     },
     bullet: {
       display: 'inline-block',
@@ -85,7 +88,7 @@ const SubscriptionsWatched = (props) => {
     return (
         <div>
             
-          <Card className={classes.root} style={{marginRight:'-40%',marginTop:'-20%' ,border:'1px solid #eee'}}>
+          <Card className={classes.root} >
            <span style={{fontSize:'x-large'}}>Subscribers :</span><CardContent>
               <Typography className={classes.title} color="textSecondary" >
               {names}

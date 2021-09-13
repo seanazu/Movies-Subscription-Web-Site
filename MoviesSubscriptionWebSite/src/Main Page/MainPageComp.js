@@ -8,6 +8,13 @@ import SubscriptionsComp from '../Subscriptions/MainComp'
 import EditSubscriptionComp from '../Subscriptions/EditSubscriptionComp';
 import MainComp from '../Movies/MainComp';
 import Button from '@material-ui/core/Button'
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    root :{
+        textAlign:'center'
+    }
+})
 
 
 const MainPageComp = () => {

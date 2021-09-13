@@ -12,6 +12,15 @@ import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    appBar: {
+        backgroundColor:'black' , 
+        height:'130px',
+        backgroundColor:'whitesmoke'
+    }
+});
 
 
 
@@ -41,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const MainComp = (props) => {
+    const classes = useStyles()
 
     useEffect(async() => {
         let users = await Utils.getAllUsersDB()
@@ -97,7 +107,7 @@ const MainComp = (props) => {
             <React.Fragment>
               <CssBaseline />
               <HideOnScroll >
-                <AppBar style={{backgroundColor:'black' , height:'130px',backgroundColor:'whitesmoke'}}>
+                <AppBar >
                   <Toolbar>
                       <div style={{margin:'44%'}}>
                   <img src="https://api.freelogodesign.org/files/d5c8050329474faaa4365bf3623377bf/thumb/logo_200x200.png?v=0" alt="Subscription Web Site" style={{height:'200px', width:'200px',margin:'auto'}}/>

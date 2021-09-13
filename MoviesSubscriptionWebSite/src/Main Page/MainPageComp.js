@@ -43,7 +43,7 @@ const MainPageComp = () => {
 
 
     return (
-        <div style={{textAlign:'center'}}>
+        <div className={classes.root}>
             <br/>
             <br/>
             <br/>

@@ -107,7 +107,7 @@ const MainComp = (props) => {
             <React.Fragment>
               <CssBaseline />
               <HideOnScroll >
-                <AppBar >
+                <AppBar calssName={classes.appBar}>
                   <Toolbar>
                       <div style={{margin:'44%'}}>
                   <img src="https://api.freelogodesign.org/files/d5c8050329474faaa4365bf3623377bf/thumb/logo_200x200.png?v=0" alt="Subscription Web Site" style={{height:'200px', width:'200px',margin:'auto'}}/>

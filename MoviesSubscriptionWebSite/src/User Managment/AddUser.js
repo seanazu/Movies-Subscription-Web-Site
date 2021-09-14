@@ -33,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+ permissions:{
+  fontSize:'medium'
+ }
 }));
 
 
@@ -188,7 +191,7 @@ const AddUser = () => {
                  </Grid> 
                  <Grid>
                  <table>
-                   <tr style={{fontSize:'medium'}}>
+                   <tr className={classes.permissions}>
                      <th>
                        View Subscriptions<Checkbox  onChange={(e) => {setCheckedArr({...checkedArray,viewSubscriptions: e.target.checked})}} /><br/>
                    

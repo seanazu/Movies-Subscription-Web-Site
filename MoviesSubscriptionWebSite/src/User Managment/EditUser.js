@@ -189,7 +189,7 @@ const EditUser = (props) => {
               </Grid> 
               <Grid>
               <table>
-                <tr style={{fontSize:'medium'}}>
+                <tr className={classes.permissions}>
                   <th>
                     View Subscriptions<Checkbox defaultChecked={checkedArray.viewSubscriptions}  onClick={(e) => {setCheckedArr({...checkedArray,viewSubscriptions: e.target.checked})}} /><br/>
                 

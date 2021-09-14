@@ -50,17 +50,8 @@ const EditUser = (props) => {
       setCheckedArr(resp[0])
       let usersJson = await UsersUtils.getAllUsersJson()
       let userJson = usersJson.filter(user=>user.id == id)
-     
-      
-      
-      let userObj = {
-        firstname: userJson[0].firstname,
-        lastname : userJson[0].lastname ,
-        username : userDB[0].username ,
-        sessionTimeOut : userJson[0].sessionTimeOut ,
-        createdDate : userJson[0].createdDate ,
-    }
-    setUser(userObj)
+      let userObj = userJson[0]
+      setUser(userObj)
 
     },[])
 

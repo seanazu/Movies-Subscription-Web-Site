@@ -21,6 +21,10 @@ const useStyles = makeStyles({
   },
   subscribeButton:{
     fontSize:'x-small'
+  },
+  moviesWatchedTable : {
+    display:'flex',
+    justifyContent:'flex-end'
   }
 });
 
@@ -98,7 +102,7 @@ const MoviesWatched = (props) => {
 
     return (
         <div>
-            <table  style={{margin:'auto'}}>
+            <table className={classes.moviesWatchedTable}>
                 <tbody>
                     <tr>
                         <td>

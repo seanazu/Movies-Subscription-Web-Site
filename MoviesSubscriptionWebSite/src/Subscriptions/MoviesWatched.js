@@ -19,6 +19,9 @@ const useStyles = makeStyles({
   media: {
     height: 250,
   },
+  subscribeButton:{
+    fontSize:'x-small'
+  }
 });
 
 
@@ -108,7 +111,7 @@ const MoviesWatched = (props) => {
                                  Movies Watched
                                  </Typography>
                                  <Typography variant="body2" color="textSecondary" component="p">
-                                 <Button variant="contained" style={{fontSize:'x-small'}} color="primary" onClick={addMovie}>Subscribe to new movie</Button>{' '}
+                                 <Button variant="contained" className={classes.subscribeButton} color="primary" onClick={addMovie}>Subscribe to new movie</Button>{' '}
                                  </Typography>
                                  <Typography>
                                   {obj}

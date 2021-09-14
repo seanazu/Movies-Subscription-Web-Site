@@ -2,8 +2,20 @@ import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import MoviesUtils from '../Utils/MoviesUtils';
 import SubscriptionsUtils from '../Utils/SubscriptionsUtils';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    table: {
+        margin:'auto',
+        height:"150px", 
+        width:"250px"
+      },
+    tableBody :{
+    }
+});
 
 const AddNewMovieComp = (props) => {
+    const classes = useStyles()
     const[movies,setMovies] = useState([])
     const[moviesOption , setOptions] = useState([])
     const[selectedMovie , setSelection] = useState("")
@@ -63,7 +75,7 @@ const AddNewMovieComp = (props) => {
     return (
         <div>
             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
-            <table border="3" style={{margin:'auto',height:"150px", width:"250px"}}>
+            <table border="3" className={classes.root} >
                 <tbody border="3" style={{height:"70px", width:"150px",margin:'auto',fontSize:'small'}}>
                     <tr>
                         <td>

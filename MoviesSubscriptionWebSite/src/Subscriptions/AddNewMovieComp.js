@@ -15,6 +15,10 @@ const useStyles = makeStyles({
         width:"150px",
         margin:'auto',
         fontSize:'small'
+    },
+    selectMovie : {
+        width:'100px',
+        margin:'auto'
     }
 });
 
@@ -84,9 +88,9 @@ const AddNewMovieComp = (props) => {
                     <tr>
                         <td>
                             <span>Add A New Movie </span>
-                            <div style={{width:'100px',margin:'auto'}}>
+                            <div className={classes.selectMovie} >
                                 <Select options={moviesOption} onChange={(opt)=>setSelection(opt.value)}/>
-                                Current Date:<input type="text" value={date} style={{width:'100px'}} />
+                                Current Date:<input type="text" value={date}  />
                                 <br/>
                                 <input type="button" value="Subscribe" onClick={subscribeMovie} />
                             </div>

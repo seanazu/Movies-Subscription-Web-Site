@@ -11,6 +11,10 @@ const useStyles = makeStyles({
         width:"250px"
       },
     tableBody :{
+        height:"70px", 
+        width:"150px",
+        margin:'auto',
+        fontSize:'small'
     }
 });
 
@@ -76,7 +80,7 @@ const AddNewMovieComp = (props) => {
         <div>
             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></link>
             <table border="3" className={classes.root} >
-                <tbody border="3" style={{height:"70px", width:"150px",margin:'auto',fontSize:'small'}}>
+                <tbody border="3" className={classes.tableBody} >
                     <tr>
                         <td>
                             <span>Add A New Movie </span>

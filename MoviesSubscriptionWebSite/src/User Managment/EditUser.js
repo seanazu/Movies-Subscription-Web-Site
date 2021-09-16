@@ -61,15 +61,11 @@ const EditUser = (props) => {
     const editUser = async () => {
         let usersDB = await UsersUtils.getAllUsersDB()
         let userDB = usersDB.filter(user=> user.username == props.match.params.username)
-        let id = userDB[0]._id
-
-        let username = user.username
+        const id = userDB[0]._id
+        const username = user.username
         await UsersUtils.putUserDB(id,{ username: username, password: userDB[0].password });
-        let permissionsJson = {...checkedArray, id:id
-         };
-    
-        await UsersUtils.putPermissions(id,permissionsJson);
-
+        const permissionsJson = {...checkedArray, id:id};
+        await UsersUtils.putPermissions(id,permissionsJson)
         let firstname= user.firstname
         let lastname= user.lastname
         let sessionTimeOut = user.sessionTimeOut

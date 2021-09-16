@@ -37,7 +37,7 @@ const SubscriptionComp = (props) => {
  
 
     const deleteMember = async ()=>{
-        let resp = await SubscriptionsUtils.deleteMember(props.id)
+        const resp = await SubscriptionsUtils.deleteMember(props.id)
         alert(resp)
         history.push('/mainpage/subscriptions/allSubscriptions')
     }

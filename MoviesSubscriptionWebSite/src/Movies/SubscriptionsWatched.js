@@ -16,17 +16,14 @@ const useStyles = makeStyles({
       border:'1px solid #eee',
       fontSize:'x-large'
     },
-    bullet: {
-      display: 'inline-block',
-      margin: '0 2px',
-      transform: 'scale(0.8)',
-    },
     title: {
       fontSize: 14,
     },
-    pos: {
-      marginBottom: 12,
-    },
+      : {
+        fontFamily:'sans serif',
+        fontSize:'x-small',
+        backgroundColor:'whitesmoke'
+    }
   });
 
 
@@ -72,13 +69,13 @@ const SubscriptionsWatched = (props) => {
         
     },[id])
 
-    let names = subscribers.map((name,index)=>{
+    const names = subscribers.map((name,index)=>{
 
         return(
             <div key={index}>
                 Subscriber : 
             <Link to="/mainpage/subscriptions" onClick={()=>sessionStorage.setItem('subscriber',name)}>
-            <Button variant="outlined" color="primary" style={{fontFamily:'sans serif',fontSize:'x-small',backgroundColor:'whitesmoke'}}  >{name}</Button>{' '}
+            <Button variant="outlined" color="primary" className={classes.subscriberLink}>{name}</Button>{' '}
             </Link>
             </div>
         )

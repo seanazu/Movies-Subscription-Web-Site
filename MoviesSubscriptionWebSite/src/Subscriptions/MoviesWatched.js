@@ -68,7 +68,7 @@ const MoviesWatched = (props) => {
         
         let subscriptions = await SubscriptionsUtils.getAllSubscriptions()
         
-        let subscription = await subscriptions.filter((item) => item._id == props.id);
+        let subscription = subscriptions.filter((item) => item._id == props.id);
         if (subscription[0]) {
           let subscriberMoviesData = [];
           await subscription[0].movies.map(item => {

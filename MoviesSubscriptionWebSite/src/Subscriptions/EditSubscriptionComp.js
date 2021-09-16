@@ -55,8 +55,8 @@ const EditSubscriptionComp = (props) => {
     }, [])
 
     const updateMember = async ()=>{
-        let memberObj = member
-        let resp = await SubscriptionsUtils.putMember(props.match.params.id, memberObj) 
+        const memberObj = member
+        const resp = await SubscriptionsUtils.putMember(props.match.params.id, memberObj) 
         alert(resp)
         history.push('/mainpage/subscriptions')
     }

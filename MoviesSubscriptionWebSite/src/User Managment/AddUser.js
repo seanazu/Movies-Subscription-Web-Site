@@ -74,17 +74,7 @@ const AddUser = () => {
     
         let id = userDB[0]._id;
     
-        let permissionsJson = {
-           id: id,
-           viewSubscriptions: checkedArray.viewSubscriptions,
-           createSubscriptions: checkedArray.createSubscriptions,
-           deleteSubscriptions: checkedArray.deleteSubscriptions,
-           updateSubscriptions: checkedArray.updateSubscriptions,
-           viewMovies: checkedArray.viewMovies,
-           createMovies: checkedArray.createMovies,
-           deleteMovies: checkedArray.deleteMovies,
-           updateMovie: checkedArray.updateMovie,
-         };
+        let permissionsJson = {...checkedArray,id:id};
     
         await UserUtils.postPermissions(permissionsJson);
     

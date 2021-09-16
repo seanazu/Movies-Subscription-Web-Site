@@ -8,9 +8,6 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-
-
-
 const MainComp = () => {
     const[displayAddSubscriber, setAddSubscriberDisplay]=useState("")
     
@@ -36,6 +33,10 @@ const MainComp = () => {
           padding: '0 30px',
           margin: 8,
         },
+        links : {
+            fontFamily:'Trebuchet MS,sans-serif'
+        }
+        
       });
       
       function MyButton(props) {
@@ -51,7 +52,7 @@ const MainComp = () => {
 
 
     return (
-        <div style={{fontFamily:'Trebuchet MS,sans-serif'}}>
+        <div className = {classes.links} >
             <br/>
             <br/>
            

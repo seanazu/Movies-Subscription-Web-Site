@@ -48,12 +48,12 @@ const EditUser = (props) => {
     useEffect(async()=>{
       let usersDB = await UsersUtils.getAllUsersDB()
       let userDB = usersDB.filter(user=> user.username == props.match.params.username)
-      let id = userDB[0]._id
-      let resp = await UsersUtils.getPermissionsById(id)
+      const id = userDB[0]._id
+      const resp = await UsersUtils.getPermissionsById(id)
       setCheckedArr(resp[0])
       let usersJson = await UsersUtils.getAllUsersJson()
       let userJson = usersJson.filter(user=>user.id == id)
-      let userObj = userJson[0]
+      const userObj = userJson[0]
       setUser(userObj)
 
     },[])
@@ -65,18 +65,8 @@ const EditUser = (props) => {
 
         let username = user.username
         await UsersUtils.putUserDB(id,{ username: username, password: userDB[0].password });
-        let permissionsJson = {
-           id: id,
-           viewSubscriptions: checkedArray.viewSubscriptions,
-           createSubscriptions: checkedArray.createSubscriptions,
-           deleteSubscriptions: checkedArray.deleteSubscriptions,
-           updateSubscriptions: checkedArray.updateSubscriptions,
-           viewMovies: checkedArray.viewMovies,
-           createMovies: checkedArray.createMovies,
-           deleteMovies: checkedArray.deleteMovies,
-           updateMovie: checkedArray.updateMovie,
+        let permissionsJson = {...checkedArray, id:id
          };
-         console.log(permissionsJson);
     
         await UsersUtils.putPermissions(id,permissionsJson);
 

@@ -10,11 +10,11 @@ const SubscriptionsComp = () => {
 
 
     useEffect(async()=>{
-      let members = await SubscriptionsUtils.getAllMembers()
+      const members = await SubscriptionsUtils.getAllMembers()
       setMembers(members) 
-      let subscriptions = await SubscriptionsUtils.getAllSubscriptions()
+      const subscriptions = await SubscriptionsUtils.getAllSubscriptions()
       setSubscriptions(subscriptions)
-      let subscriber = sessionStorage.getItem('subscriber')
+      const subscriber = sessionStorage.getItem('subscriber')
       setfindSubscriber(subscriber)
       
 

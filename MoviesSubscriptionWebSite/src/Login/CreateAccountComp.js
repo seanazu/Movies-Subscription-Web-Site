@@ -42,14 +42,14 @@ import Container from '@material-ui/core/Container';
     const[users, setUsers] = useState([])
 
     useEffect(async()=>{
-      let usersResp = await axios.get("http://localhost:3001/user-DB")
+      const usersResp = await axios.get("http://localhost:3001/user-DB")
       setUsers(usersResp.data)
      
     },[])
 
     const checkUserInput = async () =>{
-        let passwordInput = password
-        let usernameInput = username 
+        const passwordInput = password
+        const usernameInput = username 
         let bool = false
         let id = ""
         users.map(user =>{
@@ -69,7 +69,7 @@ import Container from '@material-ui/core/Container';
             username : usernameInput,
             password : passwordInput
         } 
-        let resp = await axios.put(`http://localhost:3001/user-DB/${id}`,obj) 
+        const = await axios.put(`http://localhost:3001/user-DB/${id}`,obj) 
 
             if(resp.data){
             alert("Welcome")

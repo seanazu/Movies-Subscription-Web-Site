@@ -3,9 +3,9 @@ const fetch = require ('node-fetch') ;
 
 
 const loadMoviesData = async () =>{
-    let resp = await fetch('https://api.tvmaze.com/shows') ;
+    const resp = await fetch('https://api.tvmaze.com/shows') ;
     if(resp.ok){
-        let movies = await resp.json() 
+        const movies = resp.json() 
         return new Promise ((resolve,reject) =>{
             movies.forEach(element => {
          let movie = new Movie ({
@@ -72,7 +72,7 @@ const getMovieById = (id) =>{
 
 const createNewMovie = (newMovie) =>{
     return new Promise((resolve,reject) =>{
-        let movie = new Movie (newMovie)
+        const movie = new Movie (newMovie)
         movie.save((err)=>{
             if(err){
                 reject(err)

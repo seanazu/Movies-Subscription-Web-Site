@@ -47,7 +47,7 @@ const EditMovieComp = (props) => {
     })
 
     useEffect(async() =>{
-        let movie = await MoviesUtils.getMovieById(props.match.params.id)
+        const movie = await MoviesUtils.getMovieById(props.match.params.id)
         setMovie({
             name:movie.name,
             genre:movie.genre,
@@ -58,9 +58,9 @@ const EditMovieComp = (props) => {
     },[])
 
     const updateData = async() =>{
-        let id = props.match.params.id
+        const id = props.match.params.id
         let updatedData = movie
-        let resp = await MoviesUtils.putMovie(id,updatedData)
+        const resp = await MoviesUtils.putMovie(id,updatedData)
         console.log(resp)
         alert(resp)
         history.push("/mainpage/movies")

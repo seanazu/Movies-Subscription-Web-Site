@@ -58,7 +58,7 @@ export default function SignInSide() {
     
     useEffect (async()=>{
       localStorage.removeItem("username")
-      let users = await axios.get("http://localhost:3001/user-DB")
+      const users = await axios.get("http://localhost:3001/user-DB")
       setUsers(users.data)
     },[])
     

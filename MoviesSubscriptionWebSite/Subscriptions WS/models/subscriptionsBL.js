@@ -29,7 +29,7 @@ const getSubscriberById = (id) =>{
 
 const createNewSubscriber = (newSubscription) =>{
     return new Promise((resolve,reject) =>{
-        let subscriber = new Subscription (newSubscription)
+        const subscriber = new Subscription (newSubscription)
         subscriber.save((err)=>{
             if(err){
                 reject(err)

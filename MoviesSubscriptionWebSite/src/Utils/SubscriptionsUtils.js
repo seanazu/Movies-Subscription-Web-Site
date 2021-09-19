@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const getAllMembers = async () =>{
-    constconst resp = await axios.get("http://localhost:3001/members")
+    const resp = await axios.get("http://localhost:3001/members")
     return resp.data
   }
   const getMemberById = async (id) =>{

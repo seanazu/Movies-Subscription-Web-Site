@@ -30,9 +30,9 @@ const UserComp = (props) => {
     const[id, setId] = useState("")
 
     useEffect(async () => {
-      let users = await UserUtils.getAllUsersDB()
-      let permissions = await UserUtils.getAllPermissions()
-      let usersJson = await UserUtils.getAllUsersJson()
+      const users = await UserUtils.getAllUsersDB()
+      const permissions = await UserUtils.getAllPermissions()
+      const usersJson = await UserUtils.getAllUsersJson()
       let id = ""
 
       let user = users.filter(user=>user.username == props.username)

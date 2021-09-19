@@ -38,9 +38,9 @@ const SubscriptionsWatched = (props) => {
 
     useEffect(async()=>{
         console.log();
-        let subscribers = await SubscriptionsUtils.getAllSubscriptions()
+        const subscribers = await SubscriptionsUtils.getAllSubscriptions()
         let idArray = []
-        let id = props.id
+        const id = props.id
         subscribers.map(item =>{
             item.movies.map(element=>{
                 if(element.movieId == id){
@@ -51,7 +51,7 @@ const SubscriptionsWatched = (props) => {
         })
        
 
-        let members = await SubscriptionsUtils.getAllMembers()
+        const members = await SubscriptionsUtils.getAllMembers()
         let nameArray = []
         members.map(member =>{
             idArray.map(id=>{

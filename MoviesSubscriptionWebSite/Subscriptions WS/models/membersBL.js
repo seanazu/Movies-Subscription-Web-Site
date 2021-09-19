@@ -10,7 +10,7 @@ const loadMembersData = async () =>{
        const users = resp.json() 
        return new Promise ((resolve,reject) =>{
         users.forEach(element => {
-        let member = new Member ({
+        const member = new Member ({
             fullname:element.name,
             email:element.email ,
             city : element.address.city 

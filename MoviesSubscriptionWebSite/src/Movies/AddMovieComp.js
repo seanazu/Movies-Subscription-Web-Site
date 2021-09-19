@@ -48,8 +48,8 @@ const AddMovieComp = () => {
     })
 
     const saveMovie = async() =>{
-      let movieObj = movie 
-      let resp = await MoviesUtils.postMovie(movieObj)
+      const movieObj = movie 
+      const resp = await MoviesUtils.postMovie(movieObj)
       alert(resp)
       sessionStorage.setItem('displayAllMovies', 'table')
       sessionStorage.setItem('displayAddMovie','none')

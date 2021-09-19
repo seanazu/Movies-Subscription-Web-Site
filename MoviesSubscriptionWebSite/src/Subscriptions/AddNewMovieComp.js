@@ -29,7 +29,7 @@ const AddNewMovieComp = (props) => {
     const[selectedMovie , setSelection] = useState("")
 
     useEffect(async()=>{
-        let movies = await MoviesUtils.getAllMovies()
+        const movies = await MoviesUtils.getAllMovies()
         setMovies(movies)
         let optionArray = []
         movies.map(item=>{
@@ -37,18 +37,14 @@ const AddNewMovieComp = (props) => {
         })
         setOptions(optionArray)
 
-        let subscribers = await SubscriptionsUtils.getAllSubscriptions()
-        
-
     },[])
 
     const current = new Date()
     let date =`${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}` 
 
     const subscribeMovie = async() => {
-        let subscriptions = await SubscriptionsUtils.getAllSubscriptions() 
-        let subscription = await subscriptions.filter(item => item._id == props.id)
-        console.log(subscription)
+        const subscriptions = await SubscriptionsUtils.getAllSubscriptions() 
+        let subscription = subscriptions.filter(item => item._id == props.id)
         if(subscription[0]){
             let newMovies = subscription[0].movies
             newMovies.push({
@@ -59,8 +55,7 @@ const AddNewMovieComp = (props) => {
                 _id : props.id ,
                 movies : newMovies
             }
-            let resp1= await SubscriptionsUtils.putSubscription(props.id, obj)
-            console.log(resp1);
+            let const= await SubscriptionsUtils.putSubscription(props.id, obj)
 
         }else{
             let obj = {

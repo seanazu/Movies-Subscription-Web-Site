@@ -5,9 +5,9 @@ const fetch = require ('node-fetch') ;
 
 
 const loadMembersData = async () =>{
-   let resp = await fetch('https://jsonplaceholder.typicode.com/users') ;
+   const resp = await fetch('https://jsonplaceholder.typicode.com/users') ;
    if(resp.ok){
-       let users = await resp.json() 
+       const users = resp.json() 
        return new Promise ((resolve,reject) =>{
         users.forEach(element => {
         let member = new Member ({

@@ -88,7 +88,7 @@ const MoviesWatched = (props) => {
         }
       },[subscriberMovies]);
 
-      let moviesObj = subscriberMovies.map((item, index) => {
+      const moviesObj = subscriberMovies.map((item, index) => {
           return(
               <li key={index}>
                   <Link to='/mainpage/movies' onClick={()=>sessionStorage.setItem('movie',item.name.toLowerCase())}>{item.name}</Link>,{item.date}

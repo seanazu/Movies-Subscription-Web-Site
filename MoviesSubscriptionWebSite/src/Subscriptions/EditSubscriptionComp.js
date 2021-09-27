@@ -46,7 +46,6 @@ const EditSubscriptionComp = (props) => {
 
     useEffect(async () => {
         let memberData = await SubscriptionsUtils.getMemberById(props.match.params.id)
-        console.log(memberData)
         setMember({
             name:memberData.fullname,
             email: memberData.email,
@@ -56,7 +55,7 @@ const EditSubscriptionComp = (props) => {
 
     const updateMember = async ()=>{
         const memberObj = member
-        const resp = await SubscriptionsUtils.putMember(props.match.params.id, memberObj) 
+        const const = await SubscriptionsUtils.putMember(props.match.params.id, memberObj) 
         alert(resp)
         history.push('/mainpage/subscriptions')
     }

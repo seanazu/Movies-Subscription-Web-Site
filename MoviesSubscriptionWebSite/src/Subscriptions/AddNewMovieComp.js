@@ -55,10 +55,10 @@ const AddNewMovieComp = (props) => {
                 _id : props.id ,
                 movies : newMovies
             }
-            let const= await SubscriptionsUtils.putSubscription(props.id, obj)
+             await SubscriptionsUtils.putSubscription(props.id, obj)
 
         }else{
-            let obj = {
+            const obj = {
                 _id:props.id , 
                 movies : [
                     {
@@ -67,7 +67,7 @@ const AddNewMovieComp = (props) => {
                     }
                 ]
             }
-            let resp = await SubscriptionsUtils.postSubscription(obj)
+            const resp = await SubscriptionsUtils.postSubscription(obj)
             console.log(resp);
             props.render()
         }

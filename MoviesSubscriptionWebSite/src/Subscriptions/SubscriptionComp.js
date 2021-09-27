@@ -28,7 +28,7 @@ const SubscriptionComp = (props) => {
     const[displayEdit,setEditDisplay] = useState((""))
 
     useEffect(async() =>{
-        let member = await SubscriptionsUtils.getMemberById(props.id)
+        const member = await SubscriptionsUtils.getMemberById(props.id)
         setMember(member)
         setDeleteDisplay(localStorage.getItem('deleteSubscriptions'))
         setEditDisplay(localStorage.getItem('updateSubscriptions'))

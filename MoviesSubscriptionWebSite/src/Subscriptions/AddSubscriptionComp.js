@@ -48,7 +48,7 @@ const AddSubscriptionComp = () => {
     }
 
     const addMember = async () =>{
-        let memberObj = member
+        const memberObj = member
         const resp = await SubscriptionsUtils.postMember(memberObj)
         alert(resp)
         history.push('/mainpage/subscriptions/allSubscriptions')

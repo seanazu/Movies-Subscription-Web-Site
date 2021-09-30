@@ -59,10 +59,8 @@ const MainComp = (props) => {
             password : "12345"
         }
         if(users == false){
-        let resp = await Utils.postUserDB(adminObj)
-        console.log(resp)
+        const resp = await Utils.postUserDB(adminObj)
         let users = await Utils.getAllUsersDB()
-        console.log(users)
         let user = users.filter(user=> user.username == "Admin")
         let id = user[0]._id
         let permissionObj = {
@@ -76,10 +74,8 @@ const MainComp = (props) => {
             deleteMovies: true,
             updateMovie: true
         }
-        let permissionsResp = await Utils.postPermissions(permissionObj) 
-        console.log(permissionsResp)
-
-        let userJsonObj = {
+        const permissionsResp = await Utils.postPermissions(permissionObj) 
+        const userJsonObj = {
             id: id,
             firstname: "Admin",
             lastname: "Admin",
@@ -90,8 +86,8 @@ const MainComp = (props) => {
 
         
         }
-        let id = localStorage.getItem('userId')
-        let resp = await UsersUtils.getUserJsonById(id)
+        const id = localStorage.getItem('userId')
+        const resp = await UsersUtils.getUserJsonById(id)
         if(resp[0]){
         let time = resp[0].sessionTimeOut * 60000
         setTimeout(function(){ history.push('/') }, time);

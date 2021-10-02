@@ -137,8 +137,8 @@ export default function SignInSide() {
                         localStorage.setItem('updateMovie','unset')
     
                         
-                        let id = localStorage.getItem('userId')
-                        let userPermission = await UsersUtils.getPermissionsById(id)
+                        const id = localStorage.getItem('userId')
+                        const userPermission = await UsersUtils.getPermissionsById(id)
                         userPermission.map(permission =>{
                            
                             if(permission.viewSubscriptions == false){

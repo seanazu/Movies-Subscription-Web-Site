@@ -46,30 +46,30 @@ const EditUser = (props) => {
     const [user, setUser] = useState({});
 
     useEffect(async()=>{
-      let usersDB = await UsersUtils.getAllUsersDB()
-      let userDB = usersDB.filter(user=> user.username == props.match.params.username)
+      const usersDB = await UsersUtils.getAllUsersDB()
+      const userDB = usersDB.filter(user=> user.username == props.match.params.username)
       const id = userDB[0]._id
       const resp = await UsersUtils.getPermissionsById(id)
       setCheckedArr(resp[0])
-      let usersJson = await UsersUtils.getAllUsersJson()
-      let userJson = usersJson.filter(user=>user.id == id)
+      const usersJson = await UsersUtils.getAllUsersJson()
+      const userJson = usersJson.filter(user=>user.id == id)
       const userObj = userJson[0]
       setUser(userObj)
 
     },[])
 
     const editUser = async () => {
-        let usersDB = await UsersUtils.getAllUsersDB()
-        let userDB = usersDB.filter(user=> user.username == props.match.params.username)
+        const usersDB = await UsersUtils.getAllUsersDB()
+        const userDB = usersDB.filter(user=> user.username == props.match.params.username)
         const id = userDB[0]._id
         const username = user.username
         await UsersUtils.putUserDB(id,{ username: username, password: userDB[0].password });
         const permissionsJson = {...checkedArray, id:id};
         await UsersUtils.putPermissions(id,permissionsJson)
-        let firstname= user.firstname
-        let lastname= user.lastname
-        let sessionTimeOut = user.sessionTimeOut
-        let date = user.createdDate
+        const firstname= user.firstname
+        const lastname= user.lastname
+        const sessionTimeOut = user.sessionTimeOut
+        const date = user.createdDate
     
         let userJson = {
           id: id,
@@ -89,7 +89,7 @@ const EditUser = (props) => {
         history.push('/mainpage/userManagment/allUsers')
     }
 
-    let obj = () =>{
+    const obj = () =>{
       if(user.firstname){
         return(
           
@@ -219,7 +219,7 @@ const EditUser = (props) => {
     
     }
 
-    let obj1 = obj()
+    const obj1 = obj()
 
 
 

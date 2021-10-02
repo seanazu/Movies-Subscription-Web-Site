@@ -65,7 +65,7 @@ import Container from '@material-ui/core/Container';
         } 
 
         if(bool == true){
-        let obj = {
+        const obj = {
             username : usernameInput,
             password : passwordInput
         } 

@@ -59,9 +59,8 @@ const EditMovieComp = (props) => {
 
     const updateData = async() =>{
         const id = props.match.params.id
-        let updatedData = movie
+        const updatedData = movie
         const resp = await MoviesUtils.putMovie(id,updatedData)
-        console.log(resp)
         alert(resp)
         history.push("/mainpage/movies")
     }
@@ -69,7 +68,7 @@ const EditMovieComp = (props) => {
     const cancelUpdate = () =>{
         history.push("/mainpage/movies")
     }
-    let obj = ()=>{
+    const obj = ()=>{
         if(movie.name){
             return (
                 <Container component="main" maxWidth="xs">
@@ -143,7 +142,7 @@ const EditMovieComp = (props) => {
             )
         }
     }
-    let obj1 = obj()
+    const obj1 = obj()
 
     
 

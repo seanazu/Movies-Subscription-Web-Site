@@ -15,7 +15,7 @@ const MoviesComp = () => {
         const[moviesDisplay, setMoviesDisplay] = useState('none')
 
         useEffect(async()=>{
-            let movies = await MoviesUtils.getAllMovies()
+            const movies = await MoviesUtils.getAllMovies()
             setMovies(movies) 
             if(movies){
                 setMoviesDisplay('unset')
@@ -29,9 +29,9 @@ const MoviesComp = () => {
           
 
           useEffect(async()=>{
-            let movies = await MoviesUtils.getAllMovies()
+            const movies = await MoviesUtils.getAllMovies()
             let newMovieArray = []
-            let subscriberMovie = sessionStorage.getItem('movie')
+            const subscriberMovie = sessionStorage.getItem('movie')
             movies.map(movie=>{
                 if(movie.name.toLowerCase().includes(sessionStorage.getItem('findMovie').toLowerCase())  && movie.name.toLowerCase().includes(subscriberMovie) ){
                     newMovieArray.push(movie)
@@ -46,7 +46,7 @@ const MoviesComp = () => {
 
         const displayMovies = movies.slice(pagesVisited, pagesVisited + moviesPerPage)
         .map((item,index) =>{
-                let year = item.premiered.substring(0,4)
+                const year = item.premiered.substring(0,4)
                 return(
                   <div key ={index}>
                     <a className="link" href="https://codepen.io/simoberny/pen/qxxOqj" target="_blank" ></a>

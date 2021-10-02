@@ -22,7 +22,7 @@ const SubscriptionsComp = () => {
 
     const obj = members.map((item,index)=>{
         let display = "none"
-        let name = item.fullname
+        const name = item.fullname
             if(name.includes(findSubscriber)){
                 display ="table"
             }

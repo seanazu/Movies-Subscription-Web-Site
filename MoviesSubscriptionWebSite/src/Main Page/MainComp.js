@@ -53,17 +53,17 @@ const MainComp = (props) => {
     const classes = useStyles()
 
     useEffect(async() => {
-        let users = await Utils.getAllUsersDB()
-        let adminObj = {
+        const users = await Utils.getAllUsersDB()
+        const adminObj = {
             username : "Admin" ,
             password : "12345"
         }
         if(users == false){
         const resp = await Utils.postUserDB(adminObj)
-        let users = await Utils.getAllUsersDB()
+        const users = await Utils.getAllUsersDB()
         let user = users.filter(user=> user.username == "Admin")
-        let id = user[0]._id
-        let permissionObj = {
+        const id = user[0]._id
+        const permissionObj = {
             id: id,
             viewSubscriptions: true,
             createSubscriptions: true,
@@ -89,7 +89,7 @@ const MainComp = (props) => {
         const id = localStorage.getItem('userId')
         const resp = await UsersUtils.getUserJsonById(id)
         if(resp[0]){
-        let time = resp[0].sessionTimeOut * 60000
+        const time = resp[0].sessionTimeOut * 60000
         setTimeout(function(){ history.push('/') }, time);
         }
         

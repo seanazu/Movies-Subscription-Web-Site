@@ -8,13 +8,13 @@ const MainComp = () => {
 
 
     useEffect(async()=>{
-      let users = await UserUtils.getAllUsersDB()
+      const users = await UserUtils.getAllUsersDB()
       setUserDB(users) 
 
     },[])
 
     
-    let obj = userDB.map((item,index)=>{
+    const obj = userDB.map((item,index)=>{
        return (
         <UserComp key={index} username={item.username} removeUser={() => setUserDB(userDB.filter((u) => u._id !== item._id))} displayUser/>
        ) 

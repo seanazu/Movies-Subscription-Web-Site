@@ -44,14 +44,14 @@ const AddNewMovieComp = (props) => {
 
     const subscribeMovie = async() => {
         const subscriptions = await SubscriptionsUtils.getAllSubscriptions() 
-        let subscription = subscriptions.filter(item => item._id == props.id)
+        const subscription = subscriptions.filter(item => item._id == props.id)
         if(subscription[0]){
             let newMovies = subscription[0].movies
             newMovies.push({
                 movieId:selectedMovie ,
                 date: date
             })
-            let obj = {
+            const obj = {
                 _id : props.id ,
                 movies : newMovies
             }

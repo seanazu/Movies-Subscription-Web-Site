@@ -30,10 +30,10 @@ const MainPageComp = () => {
             
         }
     
-    let displaySubscriptions = localStorage.getItem('viewSubscriptions')
+    const displaySubscriptions = localStorage.getItem('viewSubscriptions')
     setSubscriptionsDisplay(displaySubscriptions)
 
-    let displayMovies = localStorage.getItem('viewMovies')
+    const displayMovies = localStorage.getItem('viewMovies')
     setMoviesDisplay(displayMovies)
 
     setUsersDisplay(localStorage.getItem('viewUsers'))

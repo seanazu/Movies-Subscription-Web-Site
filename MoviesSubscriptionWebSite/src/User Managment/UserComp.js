@@ -21,8 +21,6 @@ const useStyles = makeStyles({
 });
 
 
-
-
 const UserComp = (props) => {
     const classes = useStyles();
     const[permission , setPermission] = useState([])
@@ -35,12 +33,12 @@ const UserComp = (props) => {
       const usersJson = await UserUtils.getAllUsersJson()
       let id = ""
 
-      let user = users.filter(user=>user.username == props.username)
+      const user = users.filter(user=>user.username == props.username)
       id = user[0]._id
       setId(id)
 
 
-      let permission = permissions.filter(permission => permission.id == id)
+      const permission = permissions.filter(permission => permission.id == id)
       let permissionStringArray = []
       permission.map(permission =>{
         if(permission.viewSubscriptions){

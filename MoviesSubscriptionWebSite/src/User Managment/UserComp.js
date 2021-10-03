@@ -31,13 +31,9 @@ const UserComp = (props) => {
       const users = await UserUtils.getAllUsersDB()
       const permissions = await UserUtils.getAllPermissions()
       const usersJson = await UserUtils.getAllUsersJson()
-      let id = ""
-
       const user = users.filter(user=>user.username == props.username)
-      id = user[0]._id
+      const id = user[0]._id
       setId(id)
-
-
       const permission = permissions.filter(permission => permission.id == id)
       let permissionStringArray = []
       permission.map(permission =>{
@@ -70,7 +66,7 @@ const UserComp = (props) => {
       let userJson = usersJson.filter(user=>user.id == id)
       
       
-      let userObj = {
+      const userObj = {
         firstname: userJson[0].firstname,
         lastname : userJson[0].lastname ,
         username : user[0].username ,

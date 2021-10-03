@@ -71,7 +71,7 @@ const EditUser = (props) => {
         const sessionTimeOut = user.sessionTimeOut
         const date = user.createdDate
     
-        let userJson = {
+        const userJson = {
           id: id,
           firstname: firstname,
           lastname: lastname,

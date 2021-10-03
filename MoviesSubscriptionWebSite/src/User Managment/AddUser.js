@@ -66,15 +66,15 @@ const AddUser = () => {
 
     const addUser = async () => {
         await UserUtils.postUserDB({ username: user.username, password: "" });
-        let resp = await UserUtils.getAllUsersDB();
-        let userDB = resp.filter(
+        const resp = await UserUtils.getAllUsersDB();
+        const userDB = resp.filter(
           (item) => item.username == user.username
         );
     
         const id = userDB[0]._id;
-        let permissionsJson = {...checkedArray,id:id};
+        const permissionsJson = {...checkedArray,id:id};
         await UserUtils.postPermissions(permissionsJson);
-        let userJson = {
+        const userJson = {
           id: id,
           firstname: user.firstname,
           lastname: user.lastname,

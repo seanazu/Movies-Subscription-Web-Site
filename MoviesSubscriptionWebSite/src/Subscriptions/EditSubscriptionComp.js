@@ -34,8 +34,6 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
   }));
   
 
-
-
 const EditSubscriptionComp = (props) => {
     const classes = useStyles();
     const[member,setMember]=useState({
@@ -55,7 +53,7 @@ const EditSubscriptionComp = (props) => {
 
     const updateMember = async ()=>{
         const memberObj = member
-        const const = await SubscriptionsUtils.putMember(props.match.params.id, memberObj) 
+        await SubscriptionsUtils.putMember(props.match.params.id, memberObj) 
         alert(resp)
         history.push('/mainpage/subscriptions')
     }

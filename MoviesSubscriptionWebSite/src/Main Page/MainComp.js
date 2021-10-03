@@ -117,10 +117,6 @@ const MainComp = (props) => {
                 
 
             </Switch>
-           
-         
-
-        
         </div>
     );
 };

@@ -23,7 +23,6 @@ const useStyles = makeStyles({
 });
 
 
-
 function HideOnScroll(props) {
     const { children, window } = props;
     const trigger = useScrollTrigger({ target: window ? window() : undefined });
@@ -61,7 +60,7 @@ const MainComp = (props) => {
         if(users == false){
         const resp = await Utils.postUserDB(adminObj)
         const users = await Utils.getAllUsersDB()
-        let user = users.filter(user=> user.username == "Admin")
+        const user = users.filter(user=> user.username == "Admin")
         const id = user[0]._id
         const permissionObj = {
             id: id,
@@ -74,7 +73,7 @@ const MainComp = (props) => {
             deleteMovies: true,
             updateMovie: true
         }
-        const permissionsResp = await Utils.postPermissions(permissionObj) 
+        await Utils.postPermissions(permissionObj) 
         const userJsonObj = {
             id: id,
             firstname: "Admin",
@@ -83,9 +82,6 @@ const MainComp = (props) => {
             sessionTimeOut: 150
         }
         await Utils.postUserJson(userJsonObj)
-
-        
-        }
         const id = localStorage.getItem('userId')
         const resp = await UsersUtils.getUserJsonById(id)
         if(resp[0]){

@@ -12,7 +12,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
-
   
   const useStyles = makeStyles((theme) => ({
     paper: {
@@ -36,9 +35,6 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
   }));
   
 
-
-
-
 const AddSubscriptionComp = () => {
     const classes = useStyles();
     const[member, setMember] = useState({fullname:"",email:"",city:""})
@@ -58,7 +54,6 @@ const AddSubscriptionComp = () => {
 
     return (
         <div>
-        
            <Container component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>

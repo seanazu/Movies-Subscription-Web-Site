@@ -63,7 +63,7 @@ const UserComp = (props) => {
         }
       })
       setPermission(permissionStringArray)
-      let userJson = usersJson.filter(user=>user.id == id)
+      const userJson = usersJson.filter(user=>user.id == id)
       
       
       const userObj = {

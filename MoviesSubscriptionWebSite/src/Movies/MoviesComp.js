@@ -38,14 +38,11 @@ const MoviesComp = () => {
                 }
             })
             setMovies(newMovieArray) 
-
           },[pageNumber])
 
         const moviesPerPage = 10
         const pagesVisited = pageNumber * moviesPerPage
-
-        const displayMovies = movies.slice(pagesVisited, pagesVisited + moviesPerPage)
-        .map((item,index) =>{
+        const displayMovies = movies.slice(pagesVisited, pagesVisited + moviesPerPage).map((item,index) =>{
                 const year = item.premiered.substring(0,4)
                 return(
                   <div key ={index}>
@@ -78,7 +75,6 @@ const MoviesComp = () => {
                      </div>
                   </div>
                 )
-               
         })
         
         const pageCount = Math.ceil(movies.length / moviesPerPage)

@@ -70,7 +70,6 @@ const EditUser = (props) => {
         const lastname= user.lastname
         const sessionTimeOut = user.sessionTimeOut
         const date = user.createdDate
-    
         const userJson = {
           id: id,
           firstname: firstname,
@@ -80,7 +79,6 @@ const EditUser = (props) => {
         };
     
         await UsersUtils.putUserJson(id,userJson);
-    
         alert("The user is updated ");
         history.push("/mainpage/userManagment/allUsers");
       };

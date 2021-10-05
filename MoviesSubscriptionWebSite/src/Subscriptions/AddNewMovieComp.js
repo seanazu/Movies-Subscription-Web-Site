@@ -68,7 +68,6 @@ const AddNewMovieComp = (props) => {
                 ]
             }
             const resp = await SubscriptionsUtils.postSubscription(obj)
-            console.log(resp);
             props.render()
         }
 

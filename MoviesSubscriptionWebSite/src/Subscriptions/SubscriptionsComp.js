@@ -4,7 +4,7 @@ import SubscriptionComp from './SubscriptionComp';
 
 
 const SubscriptionsComp = () => {
-    const[members , setMembers] = useState([])
+    const[members, setMembers] = useState([])
     const[subscriptions, setSubscriptions] = useState([])
     const[findSubscriber,setfindSubscriber] = useState("")
 
@@ -16,8 +16,6 @@ const SubscriptionsComp = () => {
       setSubscriptions(subscriptions)
       const subscriber = sessionStorage.getItem('subscriber')
       setfindSubscriber(subscriber)
-      
-
     },[])
 
     const obj = members.map((item,index)=>{

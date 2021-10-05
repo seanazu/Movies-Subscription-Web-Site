@@ -176,10 +176,8 @@ export default function SignInSide() {
                         })
                         history.push("/mainpage")
                         alert(`Welcome ${userName}`)
-    
-    
-    
-                    }else {
+   
+                    } else {
                        
                         alert("Data Not Correct")
                     }

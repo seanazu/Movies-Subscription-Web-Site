@@ -34,10 +34,6 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
   }));
   
 
-
-
-
-
 const AddMovieComp = () => {
     const classes = useStyles();
     const[movie,setMovie]=useState({
@@ -47,7 +43,7 @@ const AddMovieComp = () => {
         premiered:""
     })
 
-    const saveMovie = async() =>{
+    const saveMovie = async () =>{
       const movieObj = movie 
       const resp = await MoviesUtils.postMovie(movieObj)
       alert(resp)

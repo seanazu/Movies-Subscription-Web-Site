@@ -34,8 +34,6 @@ const MoviesWatched = (props) => {
     const classes = useStyles();
     const[subscriberMovies , setData] = useState([])
     const[obj, setObj] = useState("")
-
-
     
     const addMovie = async() =>{ 
         
@@ -45,7 +43,7 @@ const MoviesWatched = (props) => {
             const subscription = await subscriptions.filter((item) => item._id == props.id);
             if (subscription[0]) {
               let subscriberMoviesData = [];
-              await subscription[0].movies.map(item => {
+              subscription[0].movies.map(item => {
                 subscriberMoviesData.push({ movieId: item.movieId, date: item.date });
               });
     
@@ -78,7 +76,7 @@ const MoviesWatched = (props) => {
           const allMovies = await MoviesUtils.getAllMovies();
           let subscriberMoviesNameNdate = [];
           subscriberMoviesData.map((item) => {
-            let movie = allMovies.filter((movie) => movie._id == item.movieId);
+            const movie = allMovies.filter((movie) => movie._id == item.movieId);
             subscriberMoviesNameNdate.push({
               name: movie[0].name,
               date: item.date,

@@ -88,7 +88,6 @@ const MainComp = (props) => {
         const time = resp[0].sessionTimeOut * 60000
         setTimeout(function(){ history.push('/') }, time);
         }
-        
         sessionStorage.setItem('subscriber','')
     }, [])
 
@@ -114,8 +113,6 @@ const MainComp = (props) => {
                 <Route path='/' exact component={LoginComp}/>
                 <Route path='/createaccount' component={CreateAccountComp}/>
                 <Route path='/mainpage' component={MainPageComp} />
-                
-
             </Switch>
         </div>
     );

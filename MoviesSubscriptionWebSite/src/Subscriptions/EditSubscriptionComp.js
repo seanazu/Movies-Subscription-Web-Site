@@ -36,11 +36,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const EditSubscriptionComp = (props) => {
     const classes = useStyles();
-    const[member,setMember]=useState({
-        fullname:"",
-        email:"",
-        city:""
-    })
+    const[member,setMember]=useState({})
 
     useEffect(async () => {
         const memberData = await SubscriptionsUtils.getMemberById(props.match.params.id)

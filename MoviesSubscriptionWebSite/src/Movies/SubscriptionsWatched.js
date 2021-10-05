@@ -37,7 +37,6 @@ const SubscriptionsWatched = (props) => {
     })
 
     useEffect(async()=>{
-        console.log();
         const subscribers = await SubscriptionsUtils.getAllSubscriptions()
         let idArray = []
         const id = props.id
@@ -64,9 +63,6 @@ const SubscriptionsWatched = (props) => {
         let Array = [...new Set(nameArray)]
         setSubscribers(Array)
        
-       
-        
-        
     },[id])
 
     const names = subscribers.map((name,index)=>{

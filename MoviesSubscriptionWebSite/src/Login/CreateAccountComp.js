@@ -69,7 +69,7 @@ import Container from '@material-ui/core/Container';
             username : usernameInput,
             password : passwordInput
         } 
-        const = await axios.put(`http://localhost:3001/user-DB/${id}`,obj) 
+        await axios.put(`http://localhost:3001/user-DB/${id}`,obj) 
 
             if(resp.data){
             alert("Welcome")
@@ -91,7 +91,6 @@ import Container from '@material-ui/core/Container';
     return (
         <div>
             
-        
        <Container component="main" maxWidth="xs">
          <CssBaseline />
          <div className={classes.paper}>

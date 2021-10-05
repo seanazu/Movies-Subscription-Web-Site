@@ -83,7 +83,6 @@ const AddUser = () => {
         };
     
         await UserUtils.postUserJson(userJson);
-    
         await alert("The user was successfully added ");
         history.push("/mainpage/userManagment/allUsers");
       };

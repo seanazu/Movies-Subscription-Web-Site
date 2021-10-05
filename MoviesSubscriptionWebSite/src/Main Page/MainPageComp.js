@@ -23,7 +23,7 @@ const MainPageComp = () => {
     const[displayUsers, setUsersDisplay] = useState("unset")
 
     useEffect(async ()=>{
-        let username = localStorage.getItem('username')
+        const username = localStorage.getItem('username')
         history.replace("/mainpage")
         if(username == null){
             history.push("/")
@@ -50,16 +50,11 @@ const MainPageComp = () => {
             <br/>
             <br/>
             <br/>
-          
-            
+         
             <Link to="/mainpage/movies" style={{display:displayMovies}} ><Button variant="contained" color="secondary">Movies</Button></Link>{' '}
             <Link to="/mainpage/subscriptions" style={{display:displaySubscriptions}} ><Button variant="contained" color="secondary">Subscriptions</Button></Link>{' '}
             <Link to="/mainpage/userManagment" style={{display:displayUsers}}><Button variant="contained" color="secondary">Users Managment</Button></Link>{' '}
             <Link to="/"><Button variant="contained" color="secondary">Log Out</Button></Link>
-
-            
-
-           
 
             <Switch>
                 <Route path="/mainpage/userManagment" component={UserManagmentComp} />
